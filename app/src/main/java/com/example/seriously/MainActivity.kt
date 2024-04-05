@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,11 +26,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.seriously.ui.theme.SeriouslyTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import helper.AppBackground
+import view.start_view.StartViewMain
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
             Scaffold { paddingValues ->
                 AppBackground {
-                    Text(text = "Hello World", modifier = Modifier.padding(paddingValues))
+                    StartViewMain(modifier = Modifier.padding(paddingValues))
                 }
             }
         }

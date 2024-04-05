@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AppBackground(content: @Composable () -> Unit) {
-    Box(modifier = Modifier
+fun AppBackground(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+    Box(modifier = modifier
         .fillMaxSize()
         .background(Color(35, 23, 50))
     ) {
