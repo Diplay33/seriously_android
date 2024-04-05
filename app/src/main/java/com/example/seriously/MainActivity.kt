@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.seriously.ui.theme.SeriouslyTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import helper.AppBackground
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,32 +39,9 @@ class MainActivity : ComponentActivity() {
             val systemUiController = rememberSystemUiController()
             systemUiController.setSystemBarsColor(color = Color.Transparent)
 
-            Box(modifier = Modifier
-                .fillMaxSize()
-                .background(Color(35, 23, 50))
-            ) {
-                Box(contentAlignment = Alignment.Center, modifier = Modifier
-                    .blur(170.dp)
-                    .fillMaxSize()
-                    .offset((-200).dp, (-420).dp)
-                ) {
-                    Box(modifier = Modifier
-                        .clip(CircleShape)
-                        .background(Color(250, 79, 173, 200))
-                        .size(width = 225.dp, height = 300.dp)
-                    )
-                }
-
-                Box(contentAlignment = Alignment.Center, modifier = Modifier
-                    .blur(120.dp)
-                    .fillMaxSize()
-                    .offset(200.dp, 380.dp)
-                ) {
-                    Box(modifier = Modifier
-                        .clip(CircleShape)
-                        .background(Color(102, 40, 146, 200))
-                        .size(width = 250.dp, height = 300.dp)
-                    )
+            Scaffold { paddingValues ->
+                AppBackground {
+                    Text(text = "Hello World", modifier = Modifier.padding(paddingValues))
                 }
             }
         }
