@@ -44,6 +44,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import helper.AppBackground
 import view.nav_screen_routes.StartScreenRoutes
 import view.start_view.StartViewMain
+import view.start_view.sign_in_view.SignInViewMain
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,16 @@ class MainActivity : ComponentActivity() {
                     //Start screens
                     composable(StartScreenRoutes.StartView.route) {
                         AppBackground {
-                            StartViewMain(modifier = Modifier.padding(paddingValues))
+                            StartViewMain(
+                                modifier = Modifier.padding(paddingValues),
+                                navController = navController
+                            )
+                        }
+                    }
+
+                    composable(StartScreenRoutes.SignInView.route) {
+                        AppBackground {
+                            SignInViewMain(navController)
                         }
                     }
                 }

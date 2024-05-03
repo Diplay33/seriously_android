@@ -25,10 +25,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.seriously.R
+import view.nav_screen_routes.StartScreenRoutes
 
 @Composable
-fun StartViewMain(modifier: Modifier = Modifier) {
+fun StartViewMain(navController: NavController, modifier: Modifier = Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,
@@ -73,7 +75,7 @@ fun StartViewMain(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
                     .clickable {
-                        print("Login")
+                        navController.navigate(StartScreenRoutes.SignInView.route)
                     }
             )
         }

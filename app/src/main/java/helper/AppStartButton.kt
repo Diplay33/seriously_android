@@ -1,4 +1,4 @@
-package view.start_view
+package helper
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun StartViewSignUpButton(
+fun AppStartButton(
     modifier: Modifier = Modifier,
     imageResource: Int? = null,
     label: String
